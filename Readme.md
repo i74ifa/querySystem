@@ -72,6 +72,6 @@
                 $DB->table('users')->INSERT([1, 'anyName', 'username'])->run();
 
   - `INSERTCol()`
-    - using this Method if you don't need insert Columns NULL or id is AUTO_INCREMENT()
+    - Use this Method if you don't need insert Columns NULL or id is AUTO_INCREMENT()
 
            $DB->table('users')->INSERTCol(['name', 'username'], ['value name', 'value username'])->run();
