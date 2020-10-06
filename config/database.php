@@ -11,7 +11,7 @@ define(
         'username' => 'root',
         'password' => null,
         'dbname' => 'Rodir',
-        'server'  => 'localhost',
+        'server'  => '127.0.0.1',
         'type' => 'mysql'
     ]
 );

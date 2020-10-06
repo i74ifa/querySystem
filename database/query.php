@@ -22,19 +22,11 @@ function Query($name_table, $array)
       $sql = $sql .  ',' . $array[$i];
   }
   $sql = $sql . ')';
-  echo $sql . '<br>';
 
   try {
     $con->query($sql);
-    $_SESSION['case_query'] = null;
-    $_SESSION['case_query'] =  "The $name_table Created";
+    echo "table $name_table Created \n";
   } catch (Exception $e) {
-    $_SESSION['case_query'] = null;
-    $_SESSION['case_query'] = $e->getMessage();
+    echo $e->getMessage();
   }
 }
-// Drop Table you want add $con->query();;
-
-//  - Call function Like >> >> Query($migrate->name_function()[0], $migrate->users()) << << ; 
-//Query($migrate->users()[0], $migrate->users());
-//Query($migrate->posts()[0], $migrate->posts());

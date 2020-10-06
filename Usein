@@ -4,27 +4,23 @@
 
 echo "What you Do: ";
 // open command line input user
-$handle = fopen ("php://stdin","r");
+$handle = fopen("php://stdin", "r");
 
 // use input user and get value from user
 
 $line = fgets($handle);
 
-switch(trim($line)) {
-
+switch (trim($line)) {
 
   case 'create':
     echo "\n Enter Name Controller: ";
     $name = fgets($handle);
     echo $name;
     shell_exec("touch ./Controllers/$name" . '.php');
-  break;
+    break;
     exit;
+  case 'migrate' or 'Migrate':
+    require_once 'database/Migrate.php';
+    echo "\nMigrated\n";
+    break;
 }
-
-if(trim($line) != 'yes'){
-    echo "ABORTING!\n";
-    exit;
-}
-echo "\n";
-echo "Thank you, continuing...\n";

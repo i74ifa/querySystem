@@ -1,5 +1,8 @@
-<pre>
 <?php
+
+
+require_once getcwd() . '/config/app.php';
+require config['path']['queryFunction'];
 
 require_once config['path']['BluePrint'];
 require config['path']['Connect'];
@@ -11,13 +14,13 @@ class Migrate
     {
         $table = new Blueprint;
         return [
-            'posts' => [
+            0 => [
                 $table->Integer('id', TRUE, null, true),
                 $table->String('title'),
                 $table->String('body'),
                 $table->Timestamps()
             ],
-            'tb' => [
+            1 => [
                 $table->Integer('id', TRUE, null, true),
                 $table->String('title'),
                 $table->String('body'),
@@ -26,3 +29,8 @@ class Migrate
         ];
     }
 }
+$db = new Migrate;
+
+Query('Us', $db->tables()[0]);
+Query('you', $db->tables()[1]);
+Query('Me', $db->tables()[1]);
