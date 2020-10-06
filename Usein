@@ -5,7 +5,6 @@
 echo "What you Do: ";
 // open command line input user
 $handle = fopen("php://stdin", "r");
-
 // use input user and get value from user
 
 $line = fgets($handle);
